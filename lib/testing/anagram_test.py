@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from anagram import Anagram
 
 class TestAnagram:
@@ -9,7 +13,7 @@ class TestAnagram:
 
     def test_has_match_method(self):
         '''contains a method called "match".'''
-        assert(Anagram.match)
+        assert(hasattr(Anagram, 'match'))
 
     def test_does_not_match_returns_empty_list(self):
         '''returns an empty list if the input list contains no words that match the initialized word.'''
